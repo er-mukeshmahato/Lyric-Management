@@ -10,6 +10,7 @@ namespace LyricServices
     public class SongLyricServices : ILyrics
     {
         private readonly LyricContext _context;
+       
         public SongLyricServices(LyricContext context)
         {
              _context = context;
@@ -19,6 +20,8 @@ namespace LyricServices
             _context.Add(newLyric);
             _context.SaveChanges();
         }
+
+       
 
         public void delete(int id)
         {

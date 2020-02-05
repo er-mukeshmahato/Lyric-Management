@@ -11,7 +11,8 @@ namespace LyricData
 
         }
         public DbSet<SongLyric> Lyrics { get; set; }
-        public DbSet<Result> Search { get; set; }
-       
+      
+
+
     }
 }

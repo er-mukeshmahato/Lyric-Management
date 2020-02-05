@@ -15,10 +15,12 @@ namespace LyricManagement.Controllers
     public class SongLyricsController : Controller
     {
         private readonly ILyrics _cc;
+      
         public SongLyricsController(ILyrics cc)
         {
             _cc = cc;
         }
+      
         public IActionResult Index()
         {
             var result = _cc.GetAllLyric().ToList();
@@ -39,14 +41,21 @@ namespace LyricManagement.Controllers
         public IActionResult Detail(int id)
         {
             var song = _cc.GetById(id);
+            if (song == null)
+            {
+                return NotFound();
 
+            }
            
-          
 
+
+            
             return View(song);
         }
         public async Task<IActionResult> Search(string word, int? pageNumber, string sortOrder, string currentFilter)
         {
+
+          
             var data = _cc.GetAllLyric();
             Stopwatch sw = Stopwatch.StartNew();
 
@@ -64,11 +73,13 @@ namespace LyricManagement.Controllers
            
             var song = _cc.GetAll(word);
            
+           
             int pageSize = 10;
             ViewBag.found = song.Count();
             ViewBag.searched = data.Count();
             sw.Stop();
             ViewBag.time = sw.Elapsed.TotalSeconds;
+            
 
            
             return View(await PaginatedList<SongLyric>.CreateAsync(song.AsNoTracking(), pageNumber ?? 1, pageSize));
@@ -85,6 +96,7 @@ namespace LyricManagement.Controllers
             }
             _cc.delete(id);
             return View(data);
+
         }
         [HttpPost]
         public IActionResult DeleteConfirm(int id,SongLyric song)

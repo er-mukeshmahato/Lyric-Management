@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\Task3\LyricServices\obj\Release\netcoreapp3.1\LyricServices.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Task3\LyricServices\obj\Release\netcoreapp3.1\LyricServices.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Task3\LyricServices\obj\Release\netcoreapp3.1\LyricServices.AssemblyInfo.cs
+C:\Users\user\source\repos\Task3\LyricServices\bin\Release\netcoreapp3.1\LyricServices.deps.json
+C:\Users\user\source\repos\Task3\LyricServices\bin\Release\netcoreapp3.1\LyricServices.dll
+C:\Users\user\source\repos\Task3\LyricServices\bin\Release\netcoreapp3.1\LyricServices.pdb
+C:\Users\user\source\repos\Task3\LyricServices\bin\Release\netcoreapp3.1\LyricData.dll
+C:\Users\user\source\repos\Task3\LyricServices\bin\Release\netcoreapp3.1\LyricData.pdb
+C:\Users\user\source\repos\Task3\LyricServices\obj\Release\netcoreapp3.1\LyricServices.csproj.CopyComplete
+C:\Users\user\source\repos\Task3\LyricServices\obj\Release\netcoreapp3.1\LyricServices.dll
+C:\Users\user\source\repos\Task3\LyricServices\obj\Release\netcoreapp3.1\LyricServices.pdb

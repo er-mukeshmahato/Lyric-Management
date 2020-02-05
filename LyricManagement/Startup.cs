@@ -37,6 +37,7 @@ namespace LyricManagement
             services.AddControllersWithViews();
             services.AddSingleton(Configuration);
             services.AddScoped<ILyrics, SongLyricServices>();
+            
             services.AddDbContext<LyricContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("LyricManagementContext")));
 

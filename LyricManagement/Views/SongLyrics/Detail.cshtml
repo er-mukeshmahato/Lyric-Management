@@ -1,0 +1,56 @@
+﻿@model LyricData.Models.SongLyric
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div>
+    <h4>SongLyric</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Artist)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Artist)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class="col-sm-10">
+        
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ2h5sFtBRJoCHMKOR00rTyHZviHSj0yBz_THS-HtGNp7iTZHQ5e8-0OH1V" alt="Alternate Text" />
+          
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Views)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Views)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lyrics)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lyrics)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

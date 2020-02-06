@@ -9,65 +9,59 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Artist)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Views)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lyrics)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Artist)
-            </td>
-            <td>
-                <img src="https://images.search.yahoo.com/search/images;_ylt=AwrJ4NbetTleHvsA.2.JzbkF;_ylu=X3oDMTBsZ29xY3ZzBHNlYwNzZWFyY2gEc2xrA2J1dHRvbg--;_ylc=X1MDOTYwNjI4NTcEX3IDMgRhY3RuA2NsawRjc3JjcHZpZANFbzF0MmpFd0xqSmsyNFdSWFhwdFhBTDJNamN1TXdBQUFBQVhYYnhXBGZyAwRmcjIDc2EtZ3AEZ3ByaWQDT3dzUkFTV0JRUEc3Z3NkcFM5Z3RjQQRuX3N1Z2cDMARvcmlnaW4DaW1hZ2VzLnNlYXJjaC55YWhvby5jb20EcG9zAzAEcHFzdHIDBHBxc3RybAMEcXN0cmwDMzAEcXVlcnkDYWxsJTIwc29uZyUyMGFydGlzdCUyMGluJTIwb25lBHRfc3RtcAMxNTgwODQwNDMy?p=all+song+artist+in+one&fr=&fr2=sb-top-images.search&ei=UTF-8&n=60&x=wrt#id=18&iurl=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Fe3%2F77%2F1b%2Fe3771b6bdd977d7e85745e7940b9a7a2.jpg&action=click" alt="Alternate Text" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Views)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lyrics)
-            </td>
-            <td>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/styles.css" rel="stylesheet" />
 
-                <a asp-action="Detail" asp-route-id="@item.Id">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
 
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+
+
+
+<div class="overlay-content">
+    <form asp-controller="SongLyrics" asp-action="Search" method="get" style="height:600px;">
+        <input type="text" placeholder="Search.." name="word" style="width:500px;height:38px;">
+        <button type="submit" style="height:38px;"><i class="fa fa-search"></i></button>
+
+    </form>
+</div>
+
+
+<h2 class="text-muted">Lyrics Library Item</h2>
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="header clearfix detailHeading">
+
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div>
+                        <img class="Detail" src="~/Image/photo.jpg" style="height:300px;width:300px;" />
+                        @*<img class="detailImage" src="@item.Image" />*@
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p id="itemTitle"><h2>@item.Title</h2></p>
+                    <p id="itemAuthor"><h4>@item.Artist</h4></p>
+                    <p id="itemStatus"><h6><span><i class="fa ">Year:</i>@item.Year</span></h6><h6><i class="fa fa-eye">@item.Views</i></h6></p>
+                    <br />
+                    <br />
+                    <div>
+                        <b>Lyrics</b>
+                        <br />
+                        @if (item.Lyrics.Length > 150)
+                        {
+                            @item.Lyrics.Substring(0, 150)
+                        }
+                        else
+                            @item.Lyrics
+                    </div>
+                    <p><a asp-action="Details" asp-route-id="@item.Id">Details..</a>|<a asp-action="Delete" asp-route-id="@item.Id">Delete</a></p> 
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

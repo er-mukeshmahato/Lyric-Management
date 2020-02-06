@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using LyricData;
+using LyricData.Extensions;
 using LyricData.Models;
 using LyricManagement.Models;
 using LyricManagement.Models.Lyrics;
@@ -43,7 +44,8 @@ namespace LyricManagement.Controllers
             var song = _cc.GetById(id);
             if (song == null)
             {
-                return NotFound();
+
+                return View();
 
             }
            
@@ -76,13 +78,30 @@ namespace LyricManagement.Controllers
            
             int pageSize = 10;
             ViewBag.found = song.Count();
-            ViewBag.searched = data.Count();
+
+         
             sw.Stop();
             ViewBag.time = sw.Elapsed.TotalSeconds;
-            
+            foreach (var item in data)
+            {
+                ViewModels ext = new ViewModels()
+                {
 
-           
+                    Data = new List<SongLyric>()
+                {
+                   new SongLyric{Id=item.Id },
+                }
+                };
+                ///////extension////method//////
+                ViewBag.total = ext.Totaldata();
+
+            }
+
+
+
+
             return View(await PaginatedList<SongLyric>.CreateAsync(song.AsNoTracking(), pageNumber ?? 1, pageSize));
+          
          
         }
         public IActionResult Delete(int id)
@@ -94,15 +113,15 @@ namespace LyricManagement.Controllers
                 return NotFound();
 
             }
-            _cc.delete(id);
+            
             return View(data);
 
         }
-        [HttpPost]
-        public IActionResult DeleteConfirm(int id,SongLyric song)
+      
+        public IActionResult DeleteConfirm(int id)
         {
-            _cc.Delete(song);
-            return RedirectToAction("Data");
+            _cc.delete(id);
+            return RedirectToAction("Search");
         }
            
 

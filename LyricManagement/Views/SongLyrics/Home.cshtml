@@ -1,18 +1,24 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "";
 
 }
+    <h1 style="text-align:center;font-weight:bold">Welcome to Lyrics Library</h1>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/styles.css" rel="stylesheet" />
 
-<h1 style="text-align:center;font-weight:bold">Welcome to Lyrics Library</h1>
-<form asp-controller="SongLyrics" asp-action="Search" method="get">
-    <p>
-        <input type="text" name="word" style="width:60%;
-       height:45px;margin-top:150px;margin-left:20%;border:2px solid;border-color:cadetblue;"><br />
-        <input type="submit" value="search" style=" margin-left:473px;height:44px;width: 151px;
-        margin-top: 16px;border-radius: 12px;border:2px solid;" />
-        
-    </p>
 
-</form>
+
+
+
+<div class="overlay-content">
+    <form asp-controller="SongLyrics" asp-action="Search" method="get" style="height:600px;">
+        <input type="text" placeholder="Search.." name="word" style="margin-top:150px;width:500px;height:38px;">
+        <button type="submit" style="height:38px;"><i class="fa fa-search"></i></button>
+        <div class="" style="height:200px;"></div>
+    </form>
+</div>
+
+
 

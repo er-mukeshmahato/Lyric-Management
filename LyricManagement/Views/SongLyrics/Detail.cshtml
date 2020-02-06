@@ -1,56 +1,38 @@
 ﻿@model LyricData.Models.SongLyric
 
 @{
-    ViewData["Title"] = "Detail";
+    ViewData["Title"] = "";
 }
 
-<h1>Detail</h1>
+<h2 class="text-muted"> Library</h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
 
-<div>
-    <h4>SongLyric</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Artist)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Artist)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class="col-sm-10">
-        
-                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ2h5sFtBRJoCHMKOR00rTyHZviHSj0yBz_THS-HtGNp7iTZHQ5e8-0OH1V" alt="Alternate Text" />
-          
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Views)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Views)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Year)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lyrics)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Lyrics)
-        </dd>
-    </dl>
+            <div class="col-md-4">
+                <div>
+                    <img class="Detail" src="~/Image/photo.jpg" style="height:300px;width:300px;" />
+                    @*<img class="detailImage" src="@item.Image" />*@
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p id="itemTitle"><h2>@Model.Title</h2></p>
+                <p id="itemAuthor"><h4>@Model.Artist</h4></p>
+                <p id="itemStatus"><h6><span><i class="fa ">Year:</i>@Model.Year</span></h6><h6><i class="fa fa-eye">@Model.Views</i></h6></p>
+               
+                <br />
+                <br />
+                <div>
+                    <b>Lyrics</b>
+                    <br />
+                    <p id="itemType">@Model.Lyrics</p>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-  
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
 </div>

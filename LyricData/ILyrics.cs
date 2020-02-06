@@ -14,7 +14,7 @@ namespace LyricData
         SongLyric GetById(int id);
         void Add(SongLyric newLyric);
         void delete(int id);
-        void Delete(SongLyric song);
+        
 
         void update(SongLyric song);
        

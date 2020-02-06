@@ -25,17 +25,15 @@ namespace LyricServices
 
         public void delete(int id)
         {
-            SongLyric song = _context.Lyrics.Find(id);
-            _context.Remove(song);
-         
-
-        }
-
-        public void Delete(SongLyric song)
-        {
+            SongLyric song = GetById(id);
             _context.Remove(song);
             _context.SaveChanges();
+
+
+
         }
+
+      
 
         public IQueryable<SongLyric> GetAll(string find)
         {

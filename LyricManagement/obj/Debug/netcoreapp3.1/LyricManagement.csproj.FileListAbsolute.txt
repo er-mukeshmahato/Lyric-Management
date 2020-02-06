@@ -330,7 +330,6 @@ C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Create.cshtml.g.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Data.cshtml.g.cs
-C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Delete.cshtml.g.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Detail.cshtml.g.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Edit.cshtml.g.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Home.cshtml.g.cs
@@ -344,3 +343,5 @@ C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\LyricMa
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\LyricManagement.csproj.CopyComplete
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\LyricManagement.dll
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\LyricManagement.pdb
+C:\Users\user\source\repos\Task3\LyricManagement\bin\Debug\netcoreapp3.1\web.config
+C:\Users\user\source\repos\Task3\LyricManagement\obj\Debug\netcoreapp3.1\Razor\Views\SongLyrics\Delete.cshtml.g.cs

@@ -1,104 +1,113 @@
 ﻿@*@model IEnumerable<LyricData.Models.SongLyric>*@
+@using LyricData.Extensions;
+
 @model PaginatedList<LyricData.Models.SongLyric>
 
 @{
     ViewData["Title"] = "Search";
 }
 
-<h5> Total Data:@ViewBag.searched</h5>
-<h5> Total Match:@ViewBag.found</h5>
-<h5> ExecutionTime:@ViewBag.time</h5>
+@*<h5> Total Data:@ViewBag.searched</h5>*@
 
-<form asp-controller="SongLyrics" asp-action="Search" method="get">
-    <p>
-        <input type="text" name="word">
-        <input type="submit" value="search" />
-    </p>
-
-</form>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/styles.css" rel="stylesheet" />
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Artist)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Views)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Lyrics)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+
+
+
+<div class="overlay-content">
+    <form asp-controller="SongLyrics" asp-action="Search" method="get" style="height:600px;">
+        <input type="text" placeholder="Search.." name="word" style="width:500px;height:38px;">
+        <button type="submit" style="height:38px;"><i class="fa fa-search"></i></button>
+
+    </form>
+    </div>
+
+
+
+
+
+<div class="container">
+
+    <div class="col-md-4">
+        <div>
+            <h6> ExecutionTime:@ViewBag.time</h6>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h6> Total Match:@ViewBag.found</h6>
+    </div>
+    <div class="col-md-4">
+        <h6> Total Data:@ViewBag.total</h6>
+    </div>
+</div>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Artist)
-            </td>
-            <td>
+            <div class="container">
+               
 
-                <img src="~/Image/photo.jpg" style="max-height:150px;max-width:150px;" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Views)
-            </td>
-            <td>
 
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @if (item.Lyrics.Length > 100)
-                {
-                @item.Lyrics.Substring(0, 100)
-                }
-                else
-                @Html.DisplayFor(modelItem => item.Lyrics)
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Lyrics)
-                </td>*@
-            <td>
+                <div class="jumbotron">
+                    <div class="row">
 
-                <a asp-action="Detail" asp-route-id="@item.Id">Details</a>
-
-            </td>
-        </tr>
+                        <div class="col-md-4">
+                            <div>
+                                <img class="Detail" src="~/Image/photo.jpg" style="height:300px;width:300px;" />
+                                @*<img class="detailImage" src="@item.Image" />*@
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p id="itemTitle"><h2>@item.Title</h2></p>
+                            <p id="itemAuthor"><h4>@item.Artist</h4></p>
+                            <p id="itemStatus"><h6><span><i class="fa ">Year:</i>@item.Year</span></h6><h6><i class="fa fa-eye">@item.Views</i></h6></p>
+                            <br />
+                            <br />
+                            <div>
+                                <b>Lyrics</b>
+                                <br />
+                                @if (item.Lyrics.Length > 150)
+                                {
+                                    @item.Lyrics.Substring(0, 150)
+                                }
+                                else
+                                    @item.Lyrics
+                            </div>
+                            <a asp-action="Detail" asp-route-id="@item.Id">Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
-@{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-}
-<a asp-action="Search"
-   asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-pageNumber="abc+ @(Model.PageIndex - 1)"
-   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-default @prevDisabled">
-    Previous
-</a>
-<a asp-action="Search"
-   asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-pageNumber="@(Model.PageIndex + 1)"
-   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-default @nextDisabled">
-    Next
-</a>
+
+
+
+
+
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+
+        }
+
+        <a asp-action="Search"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="abc+ @(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @prevDisabled">
+
+            Previous
+
+        </a>
+
+        <a asp-action="Search"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @nextDisabled">
+
+            Next
+
+        </a>
 

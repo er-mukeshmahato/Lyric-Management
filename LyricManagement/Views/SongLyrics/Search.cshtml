@@ -29,17 +29,20 @@
 
 
 <div class="container">
-
-    <div class="col-md-4">
-        <div>
-            <h6> ExecutionTime:@ViewBag.time</h6>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <h6> ExecutionTime:@ViewBag.time</h6>
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <h6> Total Match:@ViewBag.found</h6>
-    </div>
-    <div class="col-md-4">
-        <h6> Total Data:@ViewBag.total</h6>
+        <div class="col-md-4">
+            <h6> Total Match:@ViewBag.found</h6>
+        </div>
+        <div class="col-md-4">
+            <h6> Total Data:@ViewBag.total</h6>
+        </div>
     </div>
 </div>
         @foreach (var item in Model)

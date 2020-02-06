@@ -45,7 +45,7 @@ namespace LyricManagement.Controllers
             if (song == null)
             {
 
-                return View();
+                return RedirectToAction("nofound");
 
             }
            
@@ -110,7 +110,7 @@ namespace LyricManagement.Controllers
             var data = _cc.GetById(id);
             if (data == null)
             {
-                return NotFound();
+                return RedirectToAction("nofound");
 
             }
             
@@ -147,7 +147,7 @@ namespace LyricManagement.Controllers
             var data = _cc.GetById(id);
             if (data == null)
             {
-                return NotFound();
+                return RedirectToAction("nofound");
 
             }
             return View(data);
@@ -162,6 +162,10 @@ namespace LyricManagement.Controllers
             }
             return View(song);
 
+        }
+        public IActionResult nofound()
+        {
+            return View();
         }
 
 

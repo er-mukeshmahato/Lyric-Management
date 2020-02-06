@@ -173,5 +173,4 @@ C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Lyric
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\LyricManagement.pdb
 C:\Users\user\source\repos\Task3\LyricManagement\bin\Release\netcoreapp3.1\web.config
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Razor\Views\Extension\Index.cshtml.g.cs
-C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Razor\Views\SongLyrics\notFound.cshtml.g.cs
-C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Razor\Views\SongLyrics\notfoundview.cshtml.g.cs
+C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Razor\Views\SongLyrics\nofound.cshtml.g.cs

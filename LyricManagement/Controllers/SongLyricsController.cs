@@ -137,7 +137,7 @@ namespace LyricManagement.Controllers
             if (ModelState.IsValid)
             {
                 _cc.Add(song);
-                return RedirectToAction("Data");
+                return RedirectToAction("Search");
             }
             return View(song);
 

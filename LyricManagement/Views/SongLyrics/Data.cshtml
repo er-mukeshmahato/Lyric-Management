@@ -4,28 +4,47 @@
     ViewData["Title"] = "Data";
 }
 
-<h1>Data</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="~/css/styles.css" rel="stylesheet" />
 
 
 
 
 
-<div class="overlay-content">
-    <form asp-controller="SongLyrics" asp-action="Search" method="get" style="height:600px;">
-        <input type="text" placeholder="Search.." name="word" style="width:500px;height:38px;">
-        <button type="submit" style="height:38px;"><i class="fa fa-search"></i></button>
 
-    </form>
+<title>Page Title</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="~/css/main.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+
+<div class="container">
+    <div id="cover">
+        <form method="get" action="Search">
+            <div class="tb">
+                <div class="td"><input type="text" placeholder="Search" name="word" required></div>
+                <div class="td" id="s-cover">
+                    <button type="submit">
+                        <div id="s-circle"></div>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<h2 class="text-muted">Lyrics Library Item</h2>
+
+
+
+
+
+
+
+
 @foreach (var item in Model)
 {
     <div class="container">
@@ -58,7 +77,7 @@
                         else
                             @item.Lyrics
                     </div>
-                    <p><a asp-action="Details" asp-route-id="@item.Id">Details..</a>|<a asp-action="Delete" asp-route-id="@item.Id">Delete</a></p> 
+                    <p><a asp-action="Details" asp-route-id="@item.Id">Details..</a>|<a asp-action="Delete" asp-route-id="@item.Id">Delete</a></p>
                 </div>
             </div>
         </div>

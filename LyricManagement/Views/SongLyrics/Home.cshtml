@@ -3,22 +3,6 @@
     ViewData["Title"] = "Home";
 
 }
-@*<h1 style="text-align:center;font-weight:bold">Welcome to Lyrics Library</h1>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="~/css/styles.css" rel="stylesheet" />
-
-
-
-
-
-    <div class="overlay-content">
-        <form asp-controller="SongLyrics" asp-action="Search" method="get" style="height:600px;">
-            <input type="text" placeholder="Search.." name="word" style="margin-top:150px;width:500px;height:38px;">
-            <button type="submit" style="height:38px;"><i class="fa fa-search"></i></button>
-            <div class="" style="height:200px;"></div>
-        </form>
-    </div>*@
 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -33,7 +17,7 @@
     </div>
 
     <div id="cover">
-        <form    method="get" action="LyricManagement/SongLyrics/Search">
+        <form    method="get" action="Task/SongLyrics/Search">
             <div class="tb">
                 <div class="td">
                 <input type="text" placeholder="Search" name="word" required></div>

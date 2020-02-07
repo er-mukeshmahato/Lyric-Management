@@ -142,7 +142,6 @@ C:\Users\user\source\repos\Task3\LyricManagement\bin\Release\netcoreapp3.1\Lyric
 C:\Users\user\source\repos\Task3\LyricManagement\bin\Release\netcoreapp3.1\LyricServices.pdb
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\staticwebassets\LyricManagement.StaticWebAssets.Manifest.cache
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\staticwebassets\LyricManagement.StaticWebAssets.xml
-C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\LyricManagement.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\LyricManagement.RazorAssemblyInfo.cache
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\LyricManagement.RazorAssemblyInfo.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\LyricManagement.AssemblyInfoInputs.cache
@@ -174,3 +173,4 @@ C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Lyric
 C:\Users\user\source\repos\Task3\LyricManagement\bin\Release\netcoreapp3.1\web.config
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Razor\Views\Extension\Index.cshtml.g.cs
 C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\Razor\Views\SongLyrics\nofound.cshtml.g.cs
+C:\Users\user\source\repos\Task3\LyricManagement\obj\Release\netcoreapp3.1\LyricManagement.MvcApplicationPartsAssemblyInfo.cache
